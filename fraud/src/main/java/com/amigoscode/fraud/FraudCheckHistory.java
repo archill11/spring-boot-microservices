@@ -1,9 +1,10 @@
-package com.amigoscode.customer;
+package com.amigoscode.fraud;
 
 import lombok.*;
 import lombok.experimental.FieldDefaults;
 
 import javax.persistence.*;
+import java.time.LocalDateTime;
 
 
 @Data
@@ -12,23 +13,23 @@ import javax.persistence.*;
 @AllArgsConstructor
 @NoArgsConstructor
 @FieldDefaults(level = AccessLevel.PRIVATE)
-public class Customer {
+public class FraudCheckHistory {
 
   @Id
   @SequenceGenerator(
-          name = "customer_id_sequence",
-          sequenceName = "customer_id_sequence"
+          name = "fraud_id_sequence",
+          sequenceName = "fraud_id_sequence"
   )
   @GeneratedValue(
           strategy = GenerationType.SEQUENCE,
-          generator = "customer_id_sequence"
+          generator = "fraud_id_sequence"
   )
   Integer id;
 
-  String firstName;
+  Integer customerId;
 
-  String lastName;
+  Boolean isFraudster;
 
-  String email;
+  LocalDateTime createdAt;
 
 }
