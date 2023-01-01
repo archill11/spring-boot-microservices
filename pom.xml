@@ -10,6 +10,8 @@
     <module>customer</module>
     <module>fraud</module>
     <module>eureka-server</module>
+    <module>notification</module>
+    <module>amqp</module>
   </modules>
 
   <name>amigosservices</name>
